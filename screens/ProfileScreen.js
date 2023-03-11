@@ -1,19 +1,20 @@
 import { SafeAreaView, Text } from "react-native";
 import React from "react";
 import GlobalStyles from "../styles/GlobalStyles";
+import ProfileDetail from "../components/profile/ProfileDetail";
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={GlobalStyles.droidSafeArea}>
-      <Text style={{ color: "white" }}>ProfileScreen</Text>
+      <ProfileDetail navigation={navigation} profileData={profileData} />
     </SafeAreaView>
   );
 };
 
-let userData = {
+let profileData = {
   id: 1,
   username: "jayesh.kaushik",
-  first_name: "jayesh",
+  first_name: "Jayesh",
   last_name: "kaushik",
   bio: "Loram uses cookies to keep our sites reliable, improve performance, and to analyze how our sites are used.Loram does not implement any ad tracking and no personal information is collected, used, or sold.",
   profile_image:
