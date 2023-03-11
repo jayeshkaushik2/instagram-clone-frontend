@@ -11,9 +11,10 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import * as Validator from "email-validator";
 
-const LoginForm = ({ navigation }) => {
+const SignupForm = ({ navigation }) => {
   const LoginFormSchema = Yup.object().shape({
     email: Yup.string().email().required("An email is required"),
+    username: Yup.string().required().min(2, "A username is required"),
     password: Yup.string()
       .required()
       .min(6, "Your password has to have at least 8 characters"),
@@ -22,7 +23,7 @@ const LoginForm = ({ navigation }) => {
   return (
     <View style={styles.wrapper}>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "", username: "", password: "" }}
         onSubmit={(values) => {
           console.log("post submitted", values);
           //   navigation.goBack();
@@ -62,6 +63,28 @@ const LoginForm = ({ navigation }) => {
                 value={values.email}
               />
             </View>
+
+            <View
+              style={[
+                styles.inputField(isValid),
+                {
+                  borderColor: values.username.length == 1 ? "red" : "#ccc",
+                },
+              ]}
+            >
+              <TextInput
+                placeholderTextColor="#444"
+                placeholder="Username"
+                autoCapitalize="none"
+                keyboardType="username"
+                textContentType="username"
+                autoFocus={true}
+                onChangeText={handleChange("username")}
+                onBlur={handleBlur("username")}
+                value={values.username}
+              />
+            </View>
+
             <View
               style={[
                 styles.inputField(isValid),
@@ -85,21 +108,18 @@ const LoginForm = ({ navigation }) => {
                 value={values.password}
               />
             </View>
-            <View style={{ alignItems: "flex-end", marginBottom: 28 }}>
-              <Text style={{ color: "#6BB0F5" }}>Forgot password?</Text>
-            </View>
 
             <Pressable
               style={styles.loginButton(isValid)}
               onPress={handleSubmit}
             >
-              <Text style={styles.loginButtonText}>Log in</Text>
+              <Text style={styles.loginButtonText}>Sign up</Text>
             </Pressable>
 
             <View style={styles.SigupContainer}>
-              <Text>Don't have an account?</Text>
-              <TouchableOpacity onPress={() => navigation.push("SignupScreen")}>
-                <Text style={{ color: "#6BB0F5" }}> Sign in</Text>
+              <Text>Already have an account?</Text>
+              <TouchableOpacity onPress={() => navigation.push("LoginScreen")}>
+                <Text style={{ color: "#6BB0F5" }}> Log in</Text>
               </TouchableOpacity>
             </View>
           </>
@@ -139,4 +159,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginForm;
+export default SignupForm;

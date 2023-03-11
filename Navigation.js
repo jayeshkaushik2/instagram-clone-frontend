@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./screens/HomeScreen";
 import NewPostScreen from "./screens/NewPostScreen";
 import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
 
 const Stack = createStackNavigator();
 
@@ -15,7 +16,7 @@ const screenOptions = {
 const SignedInStack = () => (
   <NavigationContainer>
     <Stack.Navigator
-      initialRouteName="LoginScreen"
+      initialRouteName="HomeScreen"
       screenOptions={screenOptions}
     >
       <Stack.Screen
@@ -31,6 +32,11 @@ const SignedInStack = () => (
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
+        options={screenOptions}
+      />
+      <Stack.Screen
+        name="SignupScreen"
+        component={SignupScreen}
         options={screenOptions}
       />
     </Stack.Navigator>
