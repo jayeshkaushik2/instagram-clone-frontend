@@ -6,6 +6,9 @@ import HomeScreen from "./screens/HomeScreen";
 import NewPostScreen from "./screens/NewPostScreen";
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import SearchScreen from "./screens/SearchScreen";
+import ReelScreen from "./screens/ReelScreen";
 
 const Stack = createStackNavigator();
 
@@ -16,7 +19,7 @@ const screenOptions = {
 const SignedInStack = () => (
   <NavigationContainer>
     <Stack.Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="ProfileScreen"
       screenOptions={screenOptions}
     >
       <Stack.Screen
@@ -29,6 +32,24 @@ const SignedInStack = () => (
         component={NewPostScreen}
         options={screenOptions}
       />
+
+      <Stack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={screenOptions}
+      />
+      <Stack.Screen
+        name="ReelScreen"
+        component={ReelScreen}
+        options={screenOptions}
+      />
+      <Stack.Screen
+        name="SearchScreen"
+        component={SearchScreen}
+        options={screenOptions}
+      />
+
+      {/* Authentication pages */}
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
