@@ -1,44 +1,16 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import React from "react";
 import { StyleSheet } from "react-native-web";
-import { Divider } from "react-native-elements";
-import { ScrollView } from "react-native-gesture-handler";
 
 const ProfileDetail = ({ navigation, profileData }) => {
-  console.log("profile data", profileData);
   return (
     <View>
-      <ProfileHeader profileData={profileData} />
-      <Divider />
-      <ScrollView>
-        <Profile profileData={profileData} />
-        <ProfileBio profileData={profileData} />
-        <ProfileEdit />
-      </ScrollView>
+      <Profile profileData={profileData} />
+      <ProfileBio profileData={profileData} />
+      <ProfileEdit />
     </View>
   );
 };
-
-const ProfileHeader = ({ profileData }) => (
-  <View style={styles.container}>
-    <TouchableOpacity>
-      <Text style={{ color: "white", fontWeight: "599", fontSize: 25 }}>
-        {profileData?.username}
-      </Text>
-    </TouchableOpacity>
-    <View style={styles.iconContainer}>
-      <TouchableOpacity>
-        {/* <View style={styles.unReadBadge}>
-          <Text style={styles.unReadBadgeText}>11</Text>
-        </View> */}
-        <Image
-          source={require("../../assets/icons/hambuger-more.png")}
-          style={styles.icon}
-        />
-      </TouchableOpacity>
-    </View>
-  </View>
-);
 
 const Profile = ({ profileData }) => (
   <View style={styles.ProfileConatiner}>
