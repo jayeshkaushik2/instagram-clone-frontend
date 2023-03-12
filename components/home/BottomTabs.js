@@ -12,9 +12,19 @@ const BottomTabs = ({ navigation }) => {
 
   const handleClick = (page) => {
     setActiveTab(page);
+    console.log("page is ", page, activeTab);
     if (page === "post") {
-      console.log("post");
       navigation.push("NewPostScreen");
+    } else if (page === "home") {
+      navigation.push("HomeScreen");
+    } else if (page === "profile") {
+      navigation.push("ProfileScreen");
+    } else if (page === "search") {
+      navigation.push("SearchScreen");
+    } else if (page === "reel") {
+      navigation.push("ReelScreen");
+    } else {
+      navigation.push("HomeScreen");
     }
   };
 

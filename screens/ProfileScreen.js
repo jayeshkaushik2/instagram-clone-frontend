@@ -12,6 +12,7 @@ import GlobalStyles from "../styles/GlobalStyles";
 import ProfileDetail from "../components/profile/ProfileDetail";
 import ProfilePost from "../components/profile/ProfilePost";
 import { Divider } from "react-native-elements";
+import BottomTabs from "../components/home/BottomTabs";
 
 const ProfileScreen = ({ navigation }) => {
   return (
@@ -28,6 +29,7 @@ const ProfileScreen = ({ navigation }) => {
           profileReelData={profileReelData}
         />
       </ScrollView>
+      <BottomTabs navigation={navigation} />
     </SafeAreaView>
   );
 };
