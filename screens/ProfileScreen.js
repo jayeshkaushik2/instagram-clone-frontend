@@ -26,7 +26,7 @@ const ProfileScreen = ({ navigation }) => {
         <ProfilePost
           navigation={navigation}
           profilePostData={profilePostData?.results}
-          profileReelData={profileReelData}
+          profileReelData={profileReelData?.results}
         />
       </ScrollView>
       <BottomTabs navigation={navigation} />

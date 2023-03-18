@@ -4,7 +4,6 @@ import { FlatGrid, SimpleGrid } from "react-native-super-grid";
 
 const ProfilePost = ({ navigation, profilePostData, profileReelData }) => {
   const [activePage, setActivePage] = React.useState("posts");
-
   const handlePageChange = ({ page }) => {
     if (page !== activePage) {
       setActivePage(page);
@@ -16,6 +15,10 @@ const ProfilePost = ({ navigation, profilePostData, profileReelData }) => {
       <DataPages activePage={activePage} handlePageChange={handlePageChange} />
       {activePage === "posts" ? (
         <Posts profilePostData={profilePostData} />
+      ) : null}
+
+      {activePage === "reels" ? (
+        <Reels profileReelData={profileReelData} />
       ) : null}
     </View>
   );
@@ -83,7 +86,7 @@ const Posts = ({ profilePostData }) => (
     <SimpleGrid
       itemDimension={100}
       data={profilePostData}
-      spacing={5}
+      spacing={2}
       style={{ width: "100%" }}
       renderItem={({ item }) => (
         <TouchableOpacity>
@@ -113,6 +116,49 @@ const Posts = ({ profilePostData }) => (
               uri: item?.post_images?.[0]?.image,
             }}
             style={{ width: "100%", height: 110 }}
+          />
+        </TouchableOpacity>
+      )}
+    />
+  </View>
+);
+
+const Reels = ({ profileReelData }) => (
+  <View>
+    <SimpleGrid
+      itemDimension={100}
+      data={profileReelData}
+      spacing={2}
+      style={{ width: "100%" }}
+      renderItem={({ item }) => (
+        <TouchableOpacity>
+          <View
+            style={{
+              width: 90,
+              height: 20,
+              position: "absolute",
+              left: -3,
+              top: 155,
+              alignItems: "center",
+              zIndex: 100,
+            }}
+          >
+            <Text
+              style={{
+                color: "white",
+                textShadowColor: "rgba(0, 0, 0, 0.75)",
+                textShadowOffset: { width: 1, height: 1 },
+                textShadowRadius: 5,
+              }}
+            >
+              {item?.views} views
+            </Text>
+          </View>
+          <Image
+            source={{
+              uri: item?.thumb,
+            }}
+            style={{ width: "100%", height: 180 }}
           />
         </TouchableOpacity>
       )}
