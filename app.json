@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "blank",
-    "slug": "blank",
+    "name": "instagramClone",
+    "slug": "it is a instagram clone.",
     "version": "1.0.0",
     "platforms": [
       "ios",
