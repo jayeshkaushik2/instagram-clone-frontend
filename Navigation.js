@@ -19,7 +19,7 @@ const screenOptions = {
 const SignedInStack = () => (
   <NavigationContainer>
     <Stack.Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="ReelScreen"
       screenOptions={screenOptions}
     >
       <Stack.Screen
