@@ -6,9 +6,9 @@
     "email-validator": "^2.0.4",
     "expo": "^47.0.0",
     "formik": "^2.2.9",
-    "react": "18.2.0",
+    "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-native": "0.71.4",
+    "react-native": "0.70.5",
     "react-native-eject": "^0.2.0",
     "react-native-elements": "^3.4.3",
     "react-native-gesture-handler": "~2.8.0",
@@ -16,15 +16,17 @@
     "react-native-super-grid": "^5.0.0",
     "react-native-web": "~0.18.7",
     "valid-url": "^1.0.9",
-    "yup": "^1.0.2"
+    "yup": "^1.0.2",
+    "expo-splash-screen": "~0.17.5",
+    "expo-status-bar": "~1.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3"
   },
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "version": "1.0.0",

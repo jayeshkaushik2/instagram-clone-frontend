@@ -1,12 +1,22 @@
 {
   "expo": {
     "name": "instagramClone",
-    "slug": "it is a instagram clone.",
+    "displayName": "instagram-clone",
+    "slug": "instagram-clone",
     "version": "1.0.0",
     "platforms": [
       "ios",
       "android",
       "web"
-    ]
+    ],
+    "android": {
+      "package": "insta.org.clone"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "66854fb0-5a1e-484d-afda-fbbbd56013c5"
+      }
+    },
+    "owner": "jayeshkaushik"
   }
 }
