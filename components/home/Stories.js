@@ -8,13 +8,14 @@ const Users = [
       "https://www.masala.com/public/images/2019/11/11/Shah-Rukh-Khan-Baadhshah-Of-Bollywood.jpg",
   },
   {
+    username: "insta model",
+    image:
+      "https://tse3.mm.bing.net/th?id=OIP.uMnbNkm8zAyYXz4JKxJRogHaNK&pid=Api&P=0",
+  },
+  {
     username: "Ashwariar rai",
     image:
       "https://top10reviewof.com/wp-content/uploads/2016/03/1.Top-10-Richest-Bollywood-Actresses-in-2016.jpg",
-  },
-  {
-    username: "Testing age",
-    image: "https://wallpapercave.com/wp/1lTVgTF.jpg",
   },
   {
     username: "insta model",
