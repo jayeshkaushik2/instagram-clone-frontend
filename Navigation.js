@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -9,6 +8,7 @@ import SignupScreen from "./screens/SignupScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SearchScreen from "./screens/SearchScreen";
 import ReelScreen from "./screens/ReelScreen";
+import PostDetailScreen from "./screens/PostDetailScreen";
 
 const Stack = createStackNavigator();
 
@@ -36,6 +36,11 @@ const SignedInStack = () => (
       <Stack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
+        options={screenOptions}
+      />
+      <Stack.Screen
+        name="PostDetailScreen"
+        component={PostDetailScreen}
         options={screenOptions}
       />
       <Stack.Screen

@@ -10,11 +10,22 @@ const ProfilePost = ({ navigation, profilePostData, profileReelData }) => {
     }
   };
 
+  const handlePostClick = (post_id) => {
+    console.log("clicked image", post_id);
+    navigation.push("PostDetailScreen", {
+      post_id: post_id,
+      navigation: navigation,
+    });
+  };
+
   return (
     <View>
       <DataPages activePage={activePage} handlePageChange={handlePageChange} />
       {activePage === "posts" ? (
-        <Posts profilePostData={profilePostData} />
+        <Posts
+          profilePostData={profilePostData}
+          handlePostClick={handlePostClick}
+        />
       ) : null}
 
       {activePage === "reels" ? (
@@ -81,7 +92,7 @@ const DataPages = ({ handlePageChange, activePage }) => (
   </View>
 );
 
-const Posts = ({ profilePostData }) => (
+const Posts = ({ profilePostData, handlePostClick }) => (
   <View>
     <SimpleGrid
       itemDimension={100}
@@ -89,7 +100,7 @@ const Posts = ({ profilePostData }) => (
       spacing={2}
       style={{ width: "100%" }}
       renderItem={({ item }) => (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handlePostClick(item?.id)}>
           {item?.post_images?.length > 1 ? (
             <View
               style={{
