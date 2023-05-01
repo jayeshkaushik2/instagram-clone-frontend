@@ -7,7 +7,7 @@ const ProfileDetail = ({ navigation, profileData }) => {
     <View>
       <Profile profileData={profileData} />
       <ProfileBio profileData={profileData} />
-      <ProfileEdit />
+      <ProfileEdit navigation={navigation} />
     </View>
   );
 };
@@ -59,19 +59,19 @@ const ProfileBio = ({ profileData }) => (
   </View>
 );
 
-const ProfileEdit = ({}) => (
+const ProfileEdit = ({ navigation }) => (
   <View style={styles.profileEditContainer}>
-    <View style={styles.profileEditBtn}>
-      <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.push("EditProfileScreen")}>
+      <View style={styles.profileEditBtn}>
         <Text style={styles.profileEditBtnText}>Edit profile</Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
 
-    <View style={styles.profileEditBtn}>
-      <TouchableOpacity>
+    <TouchableOpacity>
+      <View style={styles.profileEditBtn}>
         <Text style={styles.profileEditBtnText}>Share profile</Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   </View>
 );
 
