@@ -9,6 +9,7 @@ import SignupScreen from "./screens/SignupScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SearchScreen from "./screens/SearchScreen";
 import ReelScreen from "./screens/ReelScreen";
+import EditProfileScreen from "./screens/EditProfileScreen";
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,11 @@ const SignedInStack = () => (
       <Stack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
+        options={screenOptions}
+      />
+      <Stack.Screen
+        name="EditProfileScreen"
+        component={EditProfileScreen}
         options={screenOptions}
       />
       <Stack.Screen
