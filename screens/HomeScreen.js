@@ -138,24 +138,6 @@ const Posts = [
     ],
   },
   {
-    username: "Testing age",
-    id: 5,
-    likes: 225,
-    caption: "This is a caption, by jayesh.kaushik",
-    image: "https://wallpapercave.com/wp/1lTVgTF.jpg",
-    post_images: [
-      { id: 5, image: "https://wallpapercave.com/wp/1lTVgTF.jpg" },
-      { id: 5, image: "https://wallpapercave.com/wp/1lTVgTF.jpg" },
-    ],
-    comments: [
-      {
-        id: 5,
-        username: "testing-4",
-        comment: "Lorame 2mg Tablet is taken by mouth with or without food. 4",
-      },
-    ],
-  },
-  {
     username: "insta model",
     id: 6,
     likes: 270,
