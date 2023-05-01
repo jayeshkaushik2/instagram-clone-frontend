@@ -5,28 +5,37 @@ import {
   SafeAreaView,
   Platform,
 } from "react-native";
-import React from "react";
+import React, { useEffect, useState, memo } from "react";
 
 const BottomTabs = ({ navigation }) => {
-  const [activeTab, setActiveTab] = React.useState("home");
+  const [activeTab, setActiveTab] = useState("home");
+  const [prevActiveTab, setPrevActiveTab] = useState("home");
 
   const handleClick = (page) => {
+    console.log("route to page", page);
     setActiveTab(page);
-    console.log("page is ", page, activeTab);
-    if (page === "post") {
-      navigation.push("NewPostScreen");
-    } else if (page === "home") {
-      navigation.push("HomeScreen");
-    } else if (page === "profile") {
-      navigation.push("ProfileScreen");
-    } else if (page === "search") {
-      navigation.push("SearchScreen");
-    } else if (page === "reel") {
-      navigation.push("ReelScreen");
-    } else {
-      navigation.push("HomeScreen");
-    }
   };
+
+  useEffect(() => {
+    console.log("active tab", activeTab, prevActiveTab);
+    if (activeTab === prevActiveTab) {
+      return;
+    } else {
+      console.log("update tab to", activeTab);
+      setPrevActiveTab(activeTab);
+      if (activeTab === "post") {
+        navigation.push("NewPostScreen");
+      } else if (activeTab === "home") {
+        navigation.push("HomeScreen");
+      } else if (activeTab === "profile") {
+        navigation.push("ProfileScreen");
+      } else if (activeTab === "search") {
+        navigation.push("SearchScreen");
+      } else if (activeTab === "reel") {
+        navigation.push("ReelScreen");
+      }
+    }
+  }, [activeTab, prevActiveTab]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -106,4 +115,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BottomTabs;
+export default memo(BottomTabs);
