@@ -1,24 +1,25 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
-// import Video from "react-native-video";
+import "react-native-vector-icons";
+import VideoPlayer from "react-native-video-player";
 
 const ReelView = () => {
   return (
     <View>
       <Text style={{ color: "white" }}>test</Text>
-      {/* <Video
-        source={require("../../testing_media/test.mp4")}
-        style={{ width: "100%", height: 300 }}
-        controls={true}
-        paused={false}
-        repeat={true}
-        onEnd={() => console.log("Video ended")}
-      /> */}
+      <VideoPlayer
+        video={{
+          uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        }}
+        videoWidth={1600}
+        videoHeight={900}
+        thumbnail={{ uri: "https://i.picsum.photos/id/866/1600/900.jpg" }}
+      />
     </View>
   );
 };
 
-("https://www.instagram.com/reel/CoXsxxMDZnP/?igshid=MDJmNzVkMjY=");
+("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4");
 
 const styles = StyleSheet.create({});
 
