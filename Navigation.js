@@ -9,6 +9,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import SearchScreen from "./screens/SearchScreen";
 import ReelScreen from "./screens/ReelScreen";
 import PostDetailScreen from "./screens/PostDetailScreen";
+import AuthState from "./context/AuthState";
 
 const Stack = createStackNavigator();
 
@@ -18,54 +19,56 @@ const screenOptions = {
 
 const SignedInStack = () => (
   <NavigationContainer>
-    <Stack.Navigator
-      initialRouteName="HomeScreen"
-      screenOptions={screenOptions}
-    >
-      <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={screenOptions}
-      />
-      <Stack.Screen
-        name="NewPostScreen"
-        component={NewPostScreen}
-        options={screenOptions}
-      />
+    <AuthState>
+      <Stack.Navigator
+        initialRouteName="LoginScreen"
+        screenOptions={screenOptions}
+      >
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="NewPostScreen"
+          component={NewPostScreen}
+          options={screenOptions}
+        />
 
-      <Stack.Screen
-        name="ProfileScreen"
-        component={ProfileScreen}
-        options={screenOptions}
-      />
-      <Stack.Screen
-        name="PostDetailScreen"
-        component={PostDetailScreen}
-        options={screenOptions}
-      />
-      <Stack.Screen
-        name="ReelScreen"
-        component={ReelScreen}
-        options={screenOptions}
-      />
-      <Stack.Screen
-        name="SearchScreen"
-        component={SearchScreen}
-        options={screenOptions}
-      />
+        <Stack.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="PostDetailScreen"
+          component={PostDetailScreen}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="ReelScreen"
+          component={ReelScreen}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="SearchScreen"
+          component={SearchScreen}
+          options={screenOptions}
+        />
 
-      {/* Authentication pages */}
-      <Stack.Screen
-        name="LoginScreen"
-        component={LoginScreen}
-        options={screenOptions}
-      />
-      <Stack.Screen
-        name="SignupScreen"
-        component={SignupScreen}
-        options={screenOptions}
-      />
-    </Stack.Navigator>
+        {/* Authentication pages */}
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name="SignupScreen"
+          component={SignupScreen}
+          options={screenOptions}
+        />
+      </Stack.Navigator>
+    </AuthState>
   </NavigationContainer>
 );
 

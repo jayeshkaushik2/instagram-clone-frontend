@@ -19,14 +19,15 @@ const LoginForm = ({ navigation }) => {
       .min(6, "Your password has to have at least 8 characters"),
   });
 
+  const handleSubmit = (values) => {
+    console.log("running new sumbit", values);
+  };
+
   return (
     <View style={styles.wrapper}>
       <Formik
         initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => {
-          console.log("post submitted", values);
-          //   navigation.goBack();
-        }}
+        onSubmit={(values) => handleSubmit}
         validationSchema={LoginFormSchema}
         validateOnMount={true}
       >
